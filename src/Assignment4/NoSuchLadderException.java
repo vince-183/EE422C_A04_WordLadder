@@ -1,4 +1,4 @@
-package assignment4;
+package Assignment4;
 
 public class NoSuchLadderException extends Exception
 {

@@ -1,4 +1,4 @@
-package assignment4;
+package Assignment4;
 
 import java.util.List;
 
