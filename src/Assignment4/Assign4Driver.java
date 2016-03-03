@@ -9,25 +9,20 @@ public class Assign4Driver
 {
     public static void main(String[] args)
     {
-       // Create dictionary list
-   	 Scanner reader = null;
-   	 List<String> dictionary = new ArrayList<String>();
+       // Create a dictionary ArrayList
    	 
    	 // Create a word ladder solver object
         Assignment4Interface wordLadderSolver = new WordLadderSolver();
 
         try 
         {
-           reader = new Scanner(new FileInputStream("A4words.dat"));
            
-      	  List<String> result = wordLadderSolver.computeLadder("money", "honey");
-            boolean correct = wordLadderSolver.validateResult("money", "honey", result);
-        } 
-        catch (FileNotFoundException d)
-        {
-      	  System.out.println("File not found!");
+      	  List<String> result = wordLadderSolver.computeLadder("hello","world", -1);
+      	  int i = 0;
+      	  int j = i - 3;
+      	  System.out.printf("%d", j);
+      	  //boolean correct = wordLadderSolver.validateResult("money", "honey", result);
         }
-        
         catch (NoSuchLadderException e) 
         {
             e.printStackTrace();

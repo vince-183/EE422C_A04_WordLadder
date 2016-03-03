@@ -16,12 +16,13 @@ public interface Assignment4Interface
      *
      * @param startWord The starting word in the word ladder.
      * @param endWord The ending word in the word ladder.
+     * @param pos The position of the last letter that was changed.
      * @return A list of strings that represents the word ladder. The 0th index should contain
      * the startWord and the last position should contain endWord. All intermediate words should
      * be different by exactly one letter.
      * @throws NoSuchLadderException is thrown if no word ladder can be generated from startWord and endWord.
      */
-    List<String> computeLadder(String startWord, String endWord) throws NoSuchLadderException;
+    List<String> computeLadder(String startWord, String endWord, int pos) throws NoSuchLadderException;
 
     /**
      * Determines whether or not a word ladder is valid. NOTE: this method is NOT part of the requirements
