@@ -23,6 +23,7 @@ public class WordLadderSolver implements Assignment4Interface
 		try 
       {
          reader = new Scanner(new FileInputStream("A4words.dat"));
+         String word;
          while (reader.hasNext())
          {
        	  dictionary.add(reader.nextLine());
@@ -34,7 +35,7 @@ public class WordLadderSolver implements Assignment4Interface
          }
          for (int j = 0; j < dictionary.size(); j++)
          {
-         	dictionary.set(j,(dictionary.get(0)).substring(0,5));
+         	dictionary.set(j,(dictionary.get(j)).substring(0,5));
          }
       }
 		catch (FileNotFoundException d)
