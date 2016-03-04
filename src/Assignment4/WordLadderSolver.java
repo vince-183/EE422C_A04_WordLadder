@@ -15,6 +15,7 @@ public class WordLadderSolver implements Assignment4Interface
 	private Scanner reader = null;
 	protected List<String> SolutionList = new ArrayList<String>(); // This is the solutionList to be returned and printed if successful
 	protected List<String> dictionary = new ArrayList<String>();
+	protected List<String> checkedList = new ArrayList<String>(); // words we have checked so far
 	
     // add a constructor for this object. HINT: it would be a good idea to set up the dictionary there
 	public WordLadderSolver()
@@ -57,6 +58,11 @@ public class WordLadderSolver implements Assignment4Interface
         {
       	  return SolutionList;
         }
+        if(checkedList.contains(startWord)){// if we have already checked this word and it did not give us word ladder, return up
+        	SolutionList.remove(startWord);
+        	return SolutionList;
+        }
+        
         List<String> tempList = new ArrayList<String>();
         //Iterator<String> tempIter = tempList.iterator();
         // Search dictionary for words that differ from startWord by 1 letter
@@ -77,7 +83,7 @@ public class WordLadderSolver implements Assignment4Interface
       		  }
       		  index++;
       	  }
-      	  if ((diffCounter == 1) && (diffPos != pos) && !(SolutionList.contains(dicTerm)))
+      	  if ((diffCounter == 1) && (diffPos != pos) && !(SolutionList.contains(dicTerm)) && !(checkedList.contains(dicTerm)))
       	  {
       		  // add the candidate word to the tempList IF AND ONLY IF the the word differs from startWord by one letter
       		  // in a position different than pos, AND the current solution list does NOT contain the candidate word.
@@ -118,6 +124,7 @@ public class WordLadderSolver implements Assignment4Interface
       	  }
         }
         //SolutionList.remove(SolutionList.indexOf(startWord));
+        checkedList.add(startWord);//keep a list of words we have already seen
         SolutionList.remove(startWord);
         return SolutionList;
     }
