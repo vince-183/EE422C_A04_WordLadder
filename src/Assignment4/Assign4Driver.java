@@ -44,22 +44,19 @@ public class Assign4Driver
 	      	  while(resultIter.hasNext()){
 	      		  System.out.print(resultIter.next() + " ");
 	      	  }
-	      	  
 	        }
 	        catch (NoSuchLadderException e) 
 	        {
-	            System.err.print(e.getMessage());
+	            System.out.print(e.getMessage());
 	           
 	        }
 	        catch (NullPointerException f)
 	        {
-	        	System.out.println("\n");
-	        	System.err.println("Error: uneven number of words");
-	        	//System.out.println("\n");
+	        	System.out.print("Error: uneven number of words");
 	        }
-	        catch (ArrayIndexOutOfBoundsException g)
+	        catch (IndexOutOfBoundsException g)
 	        {
-	        	System.err.println("Error: uneven number of words");
+	        	System.out.print("Error: uneven number of words");
 	        }
 	        finally
 	        {
