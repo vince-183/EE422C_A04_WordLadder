@@ -28,12 +28,12 @@ public class WordLadderSolver implements Assignment4Interface
 	 * Builds the 5-letter-word dictionary against which candidate words are checked.
 	 * The dictionary is an ArrayList of Strings.
 	 */
-	public WordLadderSolver()
+	public WordLadderSolver(String dictionaryFile)
 	{
 		// Populate the dictionary against which to check legality of words
 		try 
       {
-         reader = new Scanner(new FileInputStream("A4words.dat"));
+         reader = new Scanner(new FileInputStream(dictionaryFile));
          while (reader.hasNext())
          {
        	  dictionary.add(reader.nextLine());
