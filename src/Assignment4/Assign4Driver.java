@@ -7,6 +7,7 @@ import java.util.*;
 
 public class Assign4Driver
 {
+	private static Scanner reader = null;
     public static void main(String[] args)
     { 
      // Create a dictionary  and word pairs ArrayList
