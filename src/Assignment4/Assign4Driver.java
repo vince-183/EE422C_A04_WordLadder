@@ -12,7 +12,6 @@ public class Assign4Driver
     { 
      // Create a dictionary  and word pairs ArrayList
    	 // Create a word ladder solver object
-        Assignment4Interface wordLadderSolver = new WordLadderSolver(args[0]);
      // get an array of word pairs
         List<String> wordPairs = new ArrayList<String>();
 		try 
@@ -37,6 +36,7 @@ public class Assign4Driver
 		{
 	        try 
 	        {
+	          Assignment4Interface wordLadderSolver = new WordLadderSolver(args[0]);
 	          wordOne = wordPairs.get(k);
 	          wordTwo = wordPairs.get(k+1);
 	      	  List<String> result = wordLadderSolver.computeLadder(wordOne,wordTwo, -1);
@@ -44,19 +44,27 @@ public class Assign4Driver
 	      	  while(resultIter.hasNext()){
 	      		  System.out.print(resultIter.next() + " ");
 	      	  }
-	      	  System.out.println("\n\n**********\n");
+	      	  
 	        }
 	        catch (NoSuchLadderException e) 
 	        {
-	            e.printStackTrace();
+	            System.err.print(e.getMessage());
+	           
 	        }
 	        catch (NullPointerException f)
 	        {
+	        	System.out.println("\n");
 	        	System.err.println("Error: uneven number of words");
+	        	//System.out.println("\n");
 	        }
 	        catch (ArrayIndexOutOfBoundsException g)
 	        {
 	        	System.err.println("Error: uneven number of words");
+	        }
+	        finally
+	        {
+	        	
+		          System.out.println("\n**********");
 	        }
 		}
     }

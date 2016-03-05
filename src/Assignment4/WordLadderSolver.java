@@ -213,7 +213,7 @@ public class WordLadderSolver implements Assignment4Interface
         SolutionList.remove(startWord);
         if (SolutionList.isEmpty()) // Throw exception IF no word ladder can be found. Program reaches here if startWord has been removed.
         {
-      	  System.err.println("No such ladder exists between \'" + startWord + "\' and \'" + endWord + "\'.");
+      	  throw new NoSuchLadderException("No such ladder exists between \'" + startWord + "\' and \'" + endWord + "\'.");
         }
         return SolutionList;
     }
