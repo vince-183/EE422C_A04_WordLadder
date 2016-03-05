@@ -38,7 +38,9 @@ public class Assign4Driver
 	        {
 	          Assignment4Interface wordLadderSolver = new WordLadderSolver(args[0]);
 	          wordOne = wordPairs.get(k);
+	          wordOne = wordOne.toLowerCase();
 	          wordTwo = wordPairs.get(k+1);
+	          wordTwo = wordTwo.toLowerCase();
 	      	  List<String> result = wordLadderSolver.computeLadder(wordOne,wordTwo, -1);
 	      	  Iterator<String> resultIter = result.iterator();
 	      	  while(resultIter.hasNext()){
