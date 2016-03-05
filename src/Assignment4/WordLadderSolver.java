@@ -70,17 +70,17 @@ public class WordLadderSolver implements Assignment4Interface
 	{
 		if (startWord.length() != 5 || endWord.length() != 5)
 		{
-			System.out.print("Invalid word length! Please use 5-letter words.");
+			System.out.println("Invalid word length! Please use 5-letter words.");
 			return 1;
 		}
 		else if (!(dictionary.contains(startWord)))
 		{
-			System.out.print("Start word is not a legal dictionary word!");
+			System.out.println("Start word is not a legal dictionary word!");
 			return 2;
   	 	}
 		else if (!(dictionary.contains(endWord)))
   	 	{
-  	 		System.out.print("End word is not a legal dictionary word!");
+  	 		System.out.println("End word is not a legal dictionary word!");
   	 		return 3;
   	 	}
 		else return 0;
@@ -168,8 +168,9 @@ public class WordLadderSolver implements Assignment4Interface
     {
 		int errorCheck = checkValidInput(startWord, endWord); // Throw exception if input is invalid.
 		if (errorCheck > 0)
+		{
 			return SolutionList;
-		
+		}
    	 SolutionList.add(startWord);
         if (startWord.equals(endWord)) // start Word is the same as end Word; return start Word as the solution
         {
