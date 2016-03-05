@@ -66,20 +66,24 @@ public class WordLadderSolver implements Assignment4Interface
 	 * @param startWord
 	 * @param endWord
 	 */
-	private void checkValidInput(String startWord, String endWord)
+	private int checkValidInput(String startWord, String endWord)
 	{
 		if (startWord.length() != 5 || endWord.length() != 5)
 		{
-			throw new IllegalArgumentException("Invalid word length! Please use 5-letter words.");
+			System.err.println("Invalid word length! Please use 5-letter words.");
+			return 1;
 		}
-		if (!(dictionary.contains(startWord)))
+		else if (!(dictionary.contains(startWord)))
 		{
-			throw new IllegalArgumentException("Start word is not a legal dictionary word!");
+			System.err.println("Start word is not a legal dictionary word!");
+			return 2;
   	 	}
-  	 	if (!(dictionary.contains(endWord)))
+		else if (!(dictionary.contains(endWord)))
   	 	{
-  	 		throw new IllegalArgumentException("End word is not a legal dictionary word!");
+  	 		System.err.println("End word is not a legal dictionary word!");
+  	 		return 3;
   	 	}
+		else return 0;
 	}
 	
 	/**
@@ -162,7 +166,10 @@ public class WordLadderSolver implements Assignment4Interface
 	@Override
     public List<String> computeLadder(String startWord, String endWord, int pos) throws NoSuchLadderException 
     {
-   	 checkValidInput(startWord, endWord); // Throw exception if input is invalid.
+		int errorCheck = checkValidInput(startWord, endWord); // Throw exception if input is invalid.
+		if (errorCheck > 0)
+			return SolutionList;
+		
    	 SolutionList.add(startWord);
         if (startWord.equals(endWord)) // start Word is the same as end Word; return start Word as the solution
         {
@@ -206,7 +213,7 @@ public class WordLadderSolver implements Assignment4Interface
         SolutionList.remove(startWord);
         if (SolutionList.isEmpty()) // Throw exception IF no word ladder can be found. Program reaches here if startWord has been removed.
         {
-      	  throw new NoSuchLadderException("No such ladder exists between words \'" + startWord + "\' and \'" + endWord + "\'.");
+      	  System.err.println("No such ladder exists between \'" + startWord + "\' and \'" + endWord + "\'.");
         }
         return SolutionList;
     }
