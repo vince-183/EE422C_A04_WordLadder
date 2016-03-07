@@ -52,9 +52,9 @@ public class Assign4Driver
 		{
 	        try 
 	        {
-	        //create a new WordLadderSolver using args[0] as the dictionary file name
-	          Assignment4Interface wordLadderSolver = new WordLadderSolver(args[0]);
-	          wordOne = wordPairs.get(k);
+	      	//create a new WordLadderSolver using args[0] as the dictionary file name
+	           Assignment4Interface wordLadderSolver = new WordLadderSolver(args[0]);
+	      	  wordOne = wordPairs.get(k);
 	          wordOne = wordOne.toLowerCase();
 	          wordTwo = wordPairs.get(k+1);
 	          wordTwo = wordTwo.toLowerCase();
