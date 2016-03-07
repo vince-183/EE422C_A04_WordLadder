@@ -1,5 +1,5 @@
 /**
-    Assign4Driver
+    Assign4Driver (main)
     
     Written by Jonathan Friesen and Vincent Ip
     EE422C Assignment 4
