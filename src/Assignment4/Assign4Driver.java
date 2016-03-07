@@ -1,3 +1,22 @@
+/**
+    Assign4Driver
+    
+    Written by Jonathan Friesen and Vincent Ip
+    EE422C Assignment 4
+    Spring 2016
+    The University of Texas at Austin
+    
+    This program takes two files as input:
+     - Dictionary txt
+     - Test Word Pairs txt
+    
+    The program does the following:
+    1. Instantiate an instance of the WordLadderSolver class.
+    2. Pass in pairs of words from the Word Pairs txt. For each pair of words:
+        - Call the computeLadder method of the WordLadderSolver class.
+        - Print the results of the method.
+ */
+
 package Assignment4;
 
 import java.io.FileInputStream;
